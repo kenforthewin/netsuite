@@ -155,8 +155,12 @@ module NetSuite
       attributes[:wsdl_domain] = wsdl_domain
     end
 
-    def wsdl_endpoint
-      attributes[:wsdl_endpoint]
+    def wsdl_endpoint(wsdl_endpoint = nil)
+      if wsdl_endpoint
+        self.wsdl_endpoint = wsdl_endpoint
+      else
+        attributes[:wsdl_endpoint]
+      end
     end
 
     def wsdl_endpoint=(wsdl_endpoint)
